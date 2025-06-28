@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel - Add Event</title>
+
+  <!-- ✅ Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ✅ Tailwind Custom Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6366F1',
+            secondary: '#818CF8',
+            background: '#0f172a',
+            card: '#1e293b',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- ✅ Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, button { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+<body class="bg-sky-50 dark:bg-gray-900 text-gray-800 dark:text-white">
+
+  <!-- Header -->
+  <header class="bg-indigo-700 text-white text-center py-6 shadow-md sticky top-0 z-50 relative">
+    <h1 class="text-3xl font-bold">🛠️ Admin Event Manager</h1>
+    <button id="dark-toggle"
+      class="absolute right-4 top-4 text-sm bg-lime-500 dark:bg-gray-700 px-3 py-1 rounded shadow hover:shadow-lg transition">
+      🌙 Toggle Mode
+    </button>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-2xl mx-auto px-4 sm:px-6 py-10"> <!-- ✅ Responsive padding -->
+    <section class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
+      <h2 class="text-xl font-semibold text-indigo-700 dark:text-lime-400 mb-4">Add New Event</h2>
+      <form id="event-form" class="space-y-4">
+        <input type="text" id="event-name" placeholder="Event Name" required
+          class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600 dark:text-white"/>
+        <input type="text" id="event-club" placeholder="Club Name" required
+          class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600 dark:text-white"/>
+        <input type="datetime-local" id="event-datetime" required
+          class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600 dark:text-white"/>
+        <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Add Event</button>
+      </form>
+    </section>
+
+    <section class="mt-8">
+      <h3 class="text-lg font-semibold mb-2 text-indigo-700 dark:text-lime-400">📅 All Events</h3>
+      <ul id="event-list" class="space-y-3"></ul>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script> <!-- ✅ Main logic -->
+</body>
+</html>
